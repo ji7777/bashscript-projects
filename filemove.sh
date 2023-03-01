@@ -6,9 +6,9 @@ find "$path" > f.log
 x=$1
 c=0
 grep "$x" "f.log" | while read -r line; do
-c=$((c+1))
 #copying file to target path..here taget path is python directory
 cp "$line" "/d/python"
+c=$((c+1))
 done
 if [ $c -eq 0 ];then
 echo "no file found"
