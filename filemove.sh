@@ -7,4 +7,9 @@ x=$1
 grep "$x" "f.log" | while read -r line; do
 #copying file to target path..here taget path is python directory
 cp "$line" "/d/python"
+if [ $? == 0 ];then
+ echo "files moved successfully"
+else
+ echo "no file found"
+fi
 done
