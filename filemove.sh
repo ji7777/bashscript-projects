@@ -12,8 +12,9 @@ cp "$line" "/d/python"
 ((c++))
 done < grp.log
 echo $c
-if [ $c==0 ];then
+if [ $c -eq 0 ];then
 echo "no file found"
 else
 echo "$c files are moved"
 fi
+rm f.log grp.log
