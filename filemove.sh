@@ -10,7 +10,7 @@ grep "$x" "f.log" | while read -r line; do
 cp "$line" "/d/python"
 c=$((c+1))
 done
-if [ $c -eq 0 ];then
+if [ $c==0 ];then
 echo "no file found"
 else
 echo "$c files are moved"
