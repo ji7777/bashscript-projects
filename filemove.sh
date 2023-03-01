@@ -4,12 +4,14 @@ path="/d"
 find "$path" > f.log
 #storing user input file i.e; filename or substring
 x=$1
+c=0
 grep "$x" "f.log" | while read -r line; do
-if [ $? -eq 0 ];then
- echo "files are moving"
-else
- echo "no file found"
-fi
+c=$((c+1))
 #copying file to target path..here taget path is python directory
 cp "$line" "/d/python"
 done
+if [ $c -eq 0 ];then
+echo "no file found"
+else
+echo "$c files are moved"
+fi
