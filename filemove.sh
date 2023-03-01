@@ -5,7 +5,7 @@ find "$path" > f.log
 #storing user input file i.e; filename or substring
 x=$1
 grep "$x" "f.log" | while read -r line; do
-if [ $? == 0 ];then
+if [ $? -eq 0 ];then
  echo "files are moving"
 else
  echo "no file found"
